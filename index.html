@@ -21,7 +21,8 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<!-- toggeling this class to prevent css transitions on page load -->
+<body class="preload-transitions">
 
   <p>Hello world! This is HTML5 Boilerplate.</p>
 
@@ -29,6 +30,16 @@
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- add an event listener to the DOMContentLoaded event (also known as page load).
+  and find the CSS class that disables the transitions: '.preload-transitions'.
+  Once the DOM element is known, the class will be removed from it. -->
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      let node = document.querySelector('.preload-transitions');
+      node.classList.remove('preload-transitions');
+    });
+  </script>
 
 
 </body>
